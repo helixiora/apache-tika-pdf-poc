@@ -14,6 +14,49 @@ Located in `technologies/tika/`
 - Primary HTML output with conversion to other formats
 - ⚠️ No native Markdown support (HTML conversion required)
 
+## Planned Technologies
+
+### Commercial Cloud Services
+
+#### 1. OpenAI PDF Understanding
+- Part of GPT-4 Vision API
+- Pros: High accuracy, native markdown output, good at complex layouts
+- Cons: Cloud-based, potential privacy concerns, cost per page
+- Status: Released in March 2024
+
+#### 2. Google Document AI
+- Enterprise-grade document processing
+- Pros: High accuracy, form field detection, table extraction
+- Cons: Cloud-based, enterprise pricing, complex setup
+- Status: Generally available
+
+#### 3. Microsoft Azure Form Recognizer
+- Part of Azure Cognitive Services
+- Pros: Good form detection, pre-built models, custom training
+- Cons: Cloud-based, requires Azure subscription
+- Status: Generally available
+
+### Open Source Solutions
+
+#### 4. Unstructured
+- Python-based document processing library
+- Pros: Native markdown support, active development, good table handling
+- Cons: Still maturing, resource intensive
+- Status: Active development, regular releases
+
+#### 5. PyMuPDF (fitz)
+- Python bindings for MuPDF
+- Pros: Fast, lightweight, good for text-based PDFs
+- Cons: Limited OCR capabilities, basic layout analysis
+- Status: Stable, actively maintained
+
+#### 6. Other Candidates
+- PDFPlumber: Good for table extraction
+- PdfMiner.six: Pure Python, good for text extraction
+- Camelot: Specialized in table extraction
+- Nougat: Scientific paper extraction (by Meta)
+- Adobe PDF Services API: Commercial offering with good accuracy
+
 ## Evaluation Criteria
 
 Each PDF extraction technology is evaluated based on the following criteria:
