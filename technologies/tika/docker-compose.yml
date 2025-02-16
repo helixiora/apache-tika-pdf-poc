@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  tika:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: tika
+    ports:
+      - "9998:9998"
+    environment:
+      - TIKA_CONFIG=tika-config.xml
+      - TIKA_OCR_LANGUAGE=nld+eng  # Dutch + English OCR support
+      - TIKA_PARSER_TIMEOUT=300000  # 5 minutes timeout for parsing
+      - JAVA_OPTS=-Xmx4g  # Increase Java heap size
+    volumes:
+      - ./tika-config.xml:/tika-config.xml
+    deploy:
+      resources:
+        limits:
+          memory: 6g  # Total container memory limit
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9998/tika"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 10s 
